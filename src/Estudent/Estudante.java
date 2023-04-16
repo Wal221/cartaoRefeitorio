@@ -46,21 +46,28 @@ public abstract class Estudante extends Pessoa {
         //recrie o metodo para que ele imprima matricula com finais aleatorios
         //ja que a chance de sair numeros repetido em um random e mais baixa do que a sequencial
         int anoLetivo = 2022;
-
         Random aleatorio = new Random();
         int ale = aleatorio.nextInt(50);
-        if (ano != anoLetivo ) {
-            contador = ale;
-            //contador++;
-            this.matricula = (ano * 10000) + contador;
-        } else if (ano == anoLetivo) {
-            contador = ale;
-            this.matricula = (ano * 10000) + contador;
-        } else {
-            contador = ale;
-            this.matricula = (ano * 10000) + contador;
+
+        //Essa verificação impede que numero aleatorios iguais sejam gerados
+        
+        if(ale == contador){
+            ale = aleatorio.nextInt(50);
         }
-    }
+
+            if (ano != anoLetivo) {
+                contador = ale;
+                //contador++;
+                this.matricula = (ano * 10000) + contador;
+            } else if (ano == anoLetivo) {
+                contador = ale;
+                this.matricula = (ano * 10000) + contador;
+            } else {
+                contador = ale;
+                this.matricula = (ano * 10000) + contador;
+            }
+        }
+
 
     public boolean isFoto() {
         return foto;
