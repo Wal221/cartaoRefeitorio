@@ -1,7 +1,6 @@
-package Estudent.Category;
+package Model;
 
-import Entitites.Pessoa;
-import Estudent.Estudante;
+import Model.Estudante;
 
 /**
  * A classe estudanteTicket e a unica que recebera alteração no saldo do cartão
